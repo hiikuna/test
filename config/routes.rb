@@ -1,9 +1,20 @@
 Rework::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :class_name => "Account::User"
 
   root 'welcome#index'
 
   get 'dashboard',    to: 'account/dashboard#index',    as: :user_root
+
+  get 'users',  :to => 'users#index',  :as => :search
+
+  resources :users,only: [:index,:show]
+
+  namespace 'setting',:module => 'account' do
+    resource :availability ,only: [:edit,:update,:show]
+    resource :profile      ,only: [:edit,:update,:show]
+    resource :contact      ,only: [:edit,:update,:show]
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

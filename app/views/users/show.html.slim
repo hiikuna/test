@@ -1,0 +1,33 @@
+p#notice = notice
+
+.users-header
+  .container
+    .col-lg-6
+      .media
+        .pull-left
+          = image_tag @user.profile_photo.url,class: 'media-object',width: 210
+        .media-body
+          h1.media-heading= @user.profile_full_name
+          p Herbert Smith Freehills
+          p I am your attorney.
+          .btn-group
+             .btn.btn-default Call Now
+             .btn.btn-default Book
+             .btn.btn-default Message
+
+
+    .col-lg-2.text-center
+      h3 Lawyer
+    .col-lg-2.text-center
+      h3
+        span &yen;
+        = 100.0 
+        small 
+          |  / min
+    .col-lg-2.text-center
+      h3 
+        | 10 
+        small min free
+
+
+

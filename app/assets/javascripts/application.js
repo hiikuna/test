@@ -19,7 +19,7 @@
 //= require backbone.queryparams.js
 //= require backbone_rails_sync
 //= require backbone_datalink
-//= require bootstrap-datepicker
+//= require jquery.timepicker.js
 //= require jquery-ui-1.10.0.custom.min.js
 //= require jquery.jeditable.js
 //= require uri
@@ -27,3 +27,4 @@
 //
 
 
+$('.datepicker').timepicker()

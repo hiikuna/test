@@ -90,6 +90,9 @@ gem 'acts_as_list'
 gem 'mailboxer'
 gem 'ancestry'
 gem 'simple_form'
+gem 'validates_email_format_of'
+# value object
+gem 'virtus'
 
 
 ###
@@ -105,7 +108,7 @@ gem 'devise_invitable',   :github => 'scambra/devise_invitable'
 gem 'underscore-rails'
 gem 'rails-backbone'
 gem 'formtastic-bootstrap',github: 'nickl-/formtastic-bootstrap3'
-
+gem 'rmagick',  :require => 'RMagick'
 
 ###
 # views
@@ -113,4 +116,3 @@ gem 'formtastic-bootstrap',github: 'nickl-/formtastic-bootstrap3'
 gem 'draper'
 gem 'slim-rails'
 gem 'slim_assets'
-gem 'formtastic'

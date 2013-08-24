@@ -1,2 +1,12 @@
-h1 Welcome#index
-p Find me in app/views/welcome/index.html.slim
+.bs-masthead
+  h1 Rework
+  p FIND YOUR ONLINE PROFIESSIONAL
+
+  .row
+    .text-center
+      = form_tag search_path,method: 'get',:class => 'navbar-form pull-left' do
+        .input-group
+          = text_field_tag :location,  nil, class: 'form-control'
+          span.input-group-btn
+            button class="btn btn-default" type="button"
+              i.icon-large.icon-search  Search

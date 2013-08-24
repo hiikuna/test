@@ -11,9 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130824152736) do
+ActiveRecord::Schema.define(version: 20130824192415) do
 
-  create_table "users", force: true do |t|
+  create_table "account_profiles", force: true do |t|
+    t.integer  "user_id"
+    t.string   "zip_code"
+    t.float    "lat"
+    t.float    "lng"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.time     "mon_start"
+    t.time     "mon_end"
+    t.time     "tue_start"
+    t.time     "tue_end"
+    t.time     "wed_start"
+    t.time     "wed_end"
+    t.time     "thu_start"
+    t.time     "thu_end"
+    t.time     "fri_start"
+    t.time     "fri_end"
+    t.time     "sat_start"
+    t.time     "sat_end"
+    t.time     "sun_start"
+    t.time     "sun_end"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image"
+    t.string   "string"
+  end
+
+  add_index "account_profiles", ["user_id"], name: "index_account_profiles_on_user_id", using: :btree
+
+  create_table "account_users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -28,7 +59,7 @@ ActiveRecord::Schema.define(version: 20130824152736) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "account_users", ["email"], name: "index_account_users_on_email", unique: true, using: :btree
+  add_index "account_users", ["reset_password_token"], name: "index_account_users_on_reset_password_token", unique: true, using: :btree
 
 end

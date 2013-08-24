@@ -1,0 +1,39 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* Page headers */
+.users-header {
+  padding: 30px 30px 40px;
+  font-size: 16px;
+  color: #5a5a5a;
+  text-align: center;
+}
+.users-header h1 {
+  color: #563d7c;
+}
+.users-header p {
+  font-weight: 300;
+  line-height: 1.5;
+}
+.users-header .container {
+  position: relative;
+}
+
+.users-docs-section + .users-docs-section {
+  margin-top: 80px;
+}
+
+/* Tablets and up */
+@media screen and (min-width: 768px) {
+  .users-header {
+    font-size: 18px;
+    text-align: left;
+  }
+  .users-header h1 {
+    font-size: 32px;
+    line-height: 1;
+  }
+}
+

@@ -1,0 +1,11 @@
+h1 Edit Availability
+
+= semantic_form_for @user.profile, url: setting_availability_path ,method: 'put' do |f|
+
+  = f.inputs do
+    - [:mon,:tue,:wed,:thu,:fri,:sat,:sun].each do |day_of_week|
+      = f.input :"#{day_of_week}_start",as: 'string',input_html: { class:'datepicker' }
+      = f.input :"#{day_of_week}_end"  ,as: 'string',input_html: { class:'datepicker' }
+
+  = f.actions do
+    = f.action :submit,as: :button

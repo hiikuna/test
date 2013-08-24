@@ -1,0 +1,45 @@
+p#notice = notice
+
+.properties-header
+  .container
+    .col-lg-6
+      h1 Building Name
+      p= @property.raw_address
+    .col-lg-2.text-center
+      h3
+        = @property.property_type
+      h3
+        = @property.contract_type
+    .col-lg-2.text-center
+      h3
+        span &yen;
+        = @property.price
+    .col-lg-2.text-center
+      h3
+        = @property.area
+        small
+          |  m
+          sup 2
+.row
+  .col-lg-8
+    = image_tag @property.images.first.image_url, width: '100%'
+    .panel
+      .panel-heading= t('Details')
+      .row
+        .col-lg-8
+          p= @property.detail
+        .col-lg-4
+          table.table.table-striped.table-bordered
+            tbody
+              tr
+                th Size
+                td
+                  = @property.area
+                  span
+                    | m
+                    sup 2
+              tr
+                th Price
+                td
+                  span &yen;
+                  = @property.price

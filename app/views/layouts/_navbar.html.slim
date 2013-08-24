@@ -16,8 +16,6 @@ div class="navbar navbar-fixed-top navbar-inverse nav-inverse #{"bs-docs-nav" if
     div class="nav-collapse collapse bs-navbar-collapse"
       ul.nav.navbar-nav
         ul.nav.navbar-nav.pull-left
-      = form_tag root_path,method: 'get',:class => 'navbar-form pull-left' do
-        = text_field_tag :location,  params[:location], class: 'form-control col-lg-3', placeholder: 'Search'
       - if signed_in?
         ul.nav.navbar-nav.pull-right
           li= link_to user_root_path do

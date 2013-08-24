@@ -1,0 +1,17 @@
+module Account
+  class ApplicationController < ActionController::Base
+    before_filter :authenticate_user!
+
+    before_action :set_user
+
+    def set_user
+      @user = current_user
+    end
+
+    layout 'setting'
+
+    # Prevent CSRF attacks by raising an exception.
+    # For APIs, you may want to use :null_session instead.
+    protect_from_forgery with: :exception
+  end
+end
