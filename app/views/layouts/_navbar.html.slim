@@ -1,0 +1,30 @@
+div class="navbar navbar-fixed-top navbar-inverse nav-inverse #{"bs-docs-nav" if request.subdomain == 'www'} "
+  .container
+    button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"
+      - 3.times do
+        span class="icon-bar"
+    a.navbar-brand.dropdown href="#{root_path}" ReWork
+    div class="dropdown"
+      ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu"
+        li
+          a tabindex="-1" href="#" Action
+        li
+          a tabindex="-1" href="#" Action
+        li
+          a tabindex="-1" href="#" Action
+
+    div class="nav-collapse collapse bs-navbar-collapse"
+      ul.nav.navbar-nav
+        ul.nav.navbar-nav.pull-left
+      = form_tag root_path,method: 'get',:class => 'navbar-form pull-left' do
+        = text_field_tag :location,  params[:location], class: 'form-control col-lg-3', placeholder: 'Search'
+      - if signed_in?
+        ul.nav.navbar-nav.pull-right
+          li= link_to account_root_path do
+            i.icon-home.icon-large
+          li= link_to destroy_account_session_path,:confirm => 'Are you sure you want to sign out?',:method => :delete do
+            i.icon-off.icon-large
+      - else
+        div class="nav navbar-nav pull-right"
+          = link_to(t('sign_in'),  new_user_session_path     ,  class: 'btn  btn-default navbar-btn') 
+          = link_to(t('sign_up'),  new_user_registration_path,  class: 'btn btn-default navbar-btn') 
