@@ -25,13 +25,16 @@ html lang="en"
       .row
         .col-lg-3
           .bs-sidebar.affix
-            
             ul.list-group
-              li.list-group-item Setting
-              ul.list-group
-                li.list-group-item= link_to 'profile',edit_setting_profile_path
-                li.list-group-item= link_to 'contact',edit_setting_contact_path
-                li.list-group-item= link_to 'availability',edit_setting_availability_path
+              li.list-group-item Profile
+              ul.list-group-item.nav
+                li= link_to 'basic info',edit_setting_profile_path
+                li= link_to 'contact',edit_setting_contact_path
+                li= link_to 'availability',edit_setting_business_hour_path
+              li.list-group-item Account Setting
+              ul.list-group-item.nav
+                li= link_to 'receiving payment',user_root_path
+                li= link_to 'payment information',user_root_path
         .col-lg-9
           #content
             = yield

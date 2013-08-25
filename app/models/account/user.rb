@@ -6,9 +6,19 @@ module Account
     devise :database_authenticatable, :registerable,
       :recoverable, :rememberable, :trackable, :validatable
 
+    has_one :profile,class_name: 'Account::Profile'
+
+    has_many :business_hours ,class_name: 'Account::BusinessHour'
+
     before_create :initialize_profile
 
-    has_one :profile
+    before_create :initialize_businss_hours
+
+    def initialize_businss_hours
+      Account::BusinessHour.day.values.each do |day|
+        self.business_hours.build(day: day)
+      end
+    end
 
     def initialize_profile
       self.build_profile

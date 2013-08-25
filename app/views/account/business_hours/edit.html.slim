@@ -1,0 +1,11 @@
+h1 Edit Availability
+
+= semantic_form_for @business_hour_form , url: setting_business_hour_path ,method: 'put' do |f|
+  - @business_hour_form.attributes.each do |day,a|
+    h4= day
+    = f.semantic_fields_for day do |day_f|
+      = day_f.input :start_at,input_html: {:class => 'datepicker',value: @business_hour_form.get(day).start_at}
+      = day_f.input :end_at,input_html: {:class => 'datepicker',value: @business_hour_form.get(day).end_at    }
+
+  = f.actions do
+    = f.action :submit,as: :button

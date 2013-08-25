@@ -10,7 +10,7 @@ Rework::Application.routes.draw do
   resources :users,only: [:index,:show]
 
   namespace 'setting',:module => 'account' do
-    resource :availability ,only: [:edit,:update,:show]
+    resource :business_hour,only: [:edit,:update,:show]
     resource :profile      ,only: [:edit,:update,:show]
     resource :contact      ,only: [:edit,:update,:show]
   end

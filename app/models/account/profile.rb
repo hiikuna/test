@@ -10,11 +10,15 @@ module Account
   end
 
   class Profile < ActiveRecord::Base
-    belongs_to :user
+    belongs_to :user,class_name: 'Account::User'
+
     mount_uploader :photo, PhotoUploader
 
     def full_name
       FullName.new(first_name: first_name,last_name: last_name)
     end
+
   end
+
 end
+

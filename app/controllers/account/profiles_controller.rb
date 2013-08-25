@@ -5,7 +5,10 @@ module Account
     end
 
     def update
-      if @user.profile_update_attributes(account_profile_params)
+      profile = @user.profile
+      profile.attributes = account_profile_params
+
+      if profile.update_attributes(account_profile_params)
         redirect_to edit_setting_profile_path
       else 
         exit

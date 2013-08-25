@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130824192415) do
+ActiveRecord::Schema.define(version: 20130825145141) do
+
+  create_table "account_business_hours", force: true do |t|
+    t.string   "day"
+    t.time     "start_at"
+    t.time     "end_at"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "account_business_hours", ["user_id"], name: "index_account_business_hours_on_user_id", using: :btree
 
   create_table "account_profiles", force: true do |t|
     t.integer  "user_id"
@@ -22,24 +33,9 @@ ActiveRecord::Schema.define(version: 20130824192415) do
     t.string   "last_name"
     t.string   "email"
     t.string   "phone_number"
-    t.time     "mon_start"
-    t.time     "mon_end"
-    t.time     "tue_start"
-    t.time     "tue_end"
-    t.time     "wed_start"
-    t.time     "wed_end"
-    t.time     "thu_start"
-    t.time     "thu_end"
-    t.time     "fri_start"
-    t.time     "fri_end"
-    t.time     "sat_start"
-    t.time     "sat_end"
-    t.time     "sun_start"
-    t.time     "sun_end"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image"
-    t.string   "string"
+    t.string   "photo"
   end
 
   add_index "account_profiles", ["user_id"], name: "index_account_profiles_on_user_id", using: :btree
