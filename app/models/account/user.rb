@@ -10,6 +10,9 @@ module Account
 
     has_many :business_hours ,class_name: 'Account::BusinessHour'
 
+    has_many :skills,class_name: 'Account::Skill'
+    has_many :expertises,through: :skills
+
     before_create :initialize_profile
 
     before_create :initialize_businss_hours
@@ -24,6 +27,6 @@ module Account
       self.build_profile
     end
 
-    delegate :update_attributes,:full_name,:photo, :to => :profile,:prefix => true
+    delegate :update_attributes,:full_name,:photo,:profession, :to => :profile,:prefix => true
   end
 end

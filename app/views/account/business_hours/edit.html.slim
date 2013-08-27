@@ -1,6 +1,6 @@
 h1 Edit Availability
 
-= semantic_form_for @business_hour_form , url: setting_business_hour_path ,method: 'put' do |f|
+= semantic_form_for @business_hour_form , url: account_business_hour_path ,method: 'put' do |f|
   - @business_hour_form.attributes.each do |day,a|
     h4= day
     = f.semantic_fields_for day do |day_f|

@@ -12,6 +12,8 @@ module Account
   class Profile < ActiveRecord::Base
     belongs_to :user,class_name: 'Account::User'
 
+    belongs_to :profession,class_name: 'Job::Profession'
+
     mount_uploader :photo, PhotoUploader
 
     def full_name

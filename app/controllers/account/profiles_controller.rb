@@ -9,7 +9,7 @@ module Account
       profile.attributes = account_profile_params
 
       if profile.update_attributes(account_profile_params)
-        redirect_to edit_setting_profile_path
+        redirect_to edit_account_profile_path
       else 
         exit
       end
@@ -18,10 +18,12 @@ module Account
     def show
     end
 
-
     private
+    
     def account_profile_params
-      params.require(:account_profile).permit(:first_name ,:last_name ,:email ,:phone_number )
+      params.require(:account_profile).permit(
+        :first_name ,:last_name ,:email ,:phone_number,:profession_id
+      )
     end
   end
 end

@@ -1,6 +1,8 @@
 h1 Edit Profile
 
-= semantic_form_for @user.profile, url: setting_profile_path ,method: 'put' do |f|
+= semantic_form_for @user.profile, url: account_profile_path ,method: 'put' do |f|
+  = f.inputs do
+    = f.input :profession,as: 'select',:collection => Job::Profession.all
 
   = f.inputs do
     = f.input :first_name

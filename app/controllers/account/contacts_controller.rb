@@ -5,7 +5,7 @@ module Account
 
     def update
       if @user.profile_update_attributes(account_profile_params)
-        redirect_to edit_setting_contact_path
+        redirect_to edit_account_contact_path
       else 
         exit
       end

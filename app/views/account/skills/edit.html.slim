@@ -1,0 +1,11 @@
+h1 Account::Skill#edit
+p Find me in app/views/account/skill/edit.html.slim
+
+= semantic_form_for @user, url: account_skill_path ,method: 'put' do |f|
+
+  - @fields.each do |field|
+    = f.input :expertises,as: 'check_boxes',collection: field.children,label: field.name,checked: true
+
+  = f.actions do
+    = f.action :submit,as: :button
+

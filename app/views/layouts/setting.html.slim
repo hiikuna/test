@@ -16,7 +16,6 @@ html lang="en"
     link href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon-precomposed" sizes="72x72"
     link href="images/apple-touch-icon.png" rel="apple-touch-icon-precomposed"
     link href="favicon.ico" rel="shortcut icon"
-
   body
 
     = render 'layouts/navbar'
@@ -28,10 +27,11 @@ html lang="en"
             ul.list-group
               li.list-group-item Profile
               ul.list-group-item.nav
-                li= link_to 'basic info',edit_setting_profile_path
-                li= link_to 'contact',edit_setting_contact_path
-                li= link_to 'availability',edit_setting_business_hour_path
-              li.list-group-item Account Setting
+                li= link_to 'basic info',edit_account_profile_path
+                li= link_to 'contact',edit_account_contact_path
+                li= link_to 'availability',edit_account_business_hour_path
+                li= link_to 'skills',edit_account_skill_path
+              li.list-group-item Account setting
               ul.list-group-item.nav
                 li= link_to 'receiving payment',user_root_path
                 li= link_to 'payment information',user_root_path

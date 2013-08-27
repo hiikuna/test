@@ -9,10 +9,11 @@ Rework::Application.routes.draw do
 
   resources :users,only: [:index,:show]
 
-  namespace 'setting',:module => 'account' do
-    resource :business_hour,only: [:edit,:update,:show]
-    resource :profile      ,only: [:edit,:update,:show]
-    resource :contact      ,only: [:edit,:update,:show]
+  namespace 'account' do
+    resource :business_hour,only: [:edit,:update]
+    resource :profile      ,only: [:edit,:update]
+    resource :contact      ,only: [:edit,:update]
+    resource :skill        ,only: [:edit,:update]
   end
 
 

@@ -93,6 +93,8 @@ gem 'simple_form'
 gem 'validates_email_format_of'
 # value object
 gem 'virtus'
+gem 'acts_as_commentable'
+gem 'thumbs_up'
 
 
 ###
